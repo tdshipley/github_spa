@@ -1,3 +1,11 @@
 ﻿<template>
-    <p>Hello</p>
+    <div class="row top-buffer">
+        <div class="col-md-2 col-md-offset-1">
+            <img class="img-circle" src.bind="user.avatar_url" width="200" height="200"/>
+        </div>
+        <div class="col-md-4 col-md-offset-1 left">
+            <h2>${user.login}</h2>
+            <h3>${user.name}</h3>
+        </div>
+    </div>
 </template>

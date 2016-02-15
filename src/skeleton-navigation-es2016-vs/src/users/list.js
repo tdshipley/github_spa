@@ -1,13 +1,18 @@
 import {inject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
+import {Router} from 'aurelia-router'
 import 'fetch';
 
-@inject(HttpClient)
+@inject(HttpClient, Router)
 export class Users {
   heading = 'Github Users';
   users = [];
 
-  constructor(http) {
+  goToUserDetails(username) {
+      this.router.navigateToRoute("UserDetail", {"username": username});
+  }
+
+  constructor(http, router) {
     http.configure(config => {
       config
         .useStandardConfiguration()
@@ -15,6 +20,7 @@ export class Users {
     });
 
     this.http = http;
+    this.router = router;
   }
 
   activate() {

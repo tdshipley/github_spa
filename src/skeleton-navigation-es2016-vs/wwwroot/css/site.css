@@ -2,6 +2,9 @@ body {
   margin: 0;
 }
 
+/*Utility Classes*/
+.top-buffer { margin-top:20px; }
+
 .splash {
   text-align: center;
   margin: 10% 0 0 0;
