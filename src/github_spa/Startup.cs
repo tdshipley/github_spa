@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace skeleton_navigation_es2016_vs
+namespace github_spa
 {
     public class Startup
     {

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using Newtonsoft.Json.Linq;
 
-namespace API.Controllers
+namespace github_spa.Controllers
 {
     public class UsersController : BaseController
     {

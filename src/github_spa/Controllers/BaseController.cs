@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using Newtonsoft.Json.Linq;
 
-namespace API.Controllers
+namespace github_spa.Controllers
 {
     [Route("api/[controller]")]
     public abstract class BaseController : Controller
