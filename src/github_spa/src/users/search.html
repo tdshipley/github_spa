@@ -1,0 +1,39 @@
+﻿<template>
+    <require from="blur-image"></require>
+    <section class="au-animate">
+
+        <div class="row top-buffer">
+            <div class="col-md-4 col-md-offset-1">
+                <h2>${heading}</h2>
+                <p>Search for users on GitHub</p>
+            </div>
+        </div>
+        <div class="row top-buffer">
+            <div class="col-md-2 col-md-offset-1">
+                <input type="text" value.bind="searchTerm" onchange.bind="completeSearch" />
+            </div>
+        </div>
+
+
+        <div class="row top top-buffer">
+            <div class="col-md-8 col-md-offset-1">
+                <table if.bind="users.length > 0" class="table">
+                    <thead>
+                        <tr>
+                            <th>Avatar</th>
+                            <th>Username</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr repeat.for="user of users" class="${ $even ? 'table-striped' : ''}">
+                            <td><img src.bind="user.avatar_url" width="50" height="50" /></td>
+                            <td>${user.login}</td>
+                            <td><a href.bind="user.html_url">View Profile</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+</template>

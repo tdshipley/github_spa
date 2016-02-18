@@ -7,13 +7,13 @@ using Newtonsoft.Json.Linq;
 namespace github_spa.Controllers
 {
     [Route("api/[controller]")]
-    public abstract class BaseController : Controller
+    public abstract class GithubController : Controller
     {
         protected const string GITHUB_ADDRESS = "api.github.com";
         protected const string USER_AGENT = "TestApp";
         protected string GITHUB_AUTH_TOKEN = string.Empty;
 
-        protected BaseController()
+        protected GithubController()
         {
             string tokenFromEnvironment = Environment.GetEnvironmentVariable("GITHUB_TOKEN");
 
@@ -53,11 +53,12 @@ namespace github_spa.Controllers
             return new UriBuilder("https", GITHUB_ADDRESS);
         }
 
-        protected UriBuilder GetGithubApiUri(string path)
+        protected UriBuilder GetGithubApiUri(string path, string query = "")
         {
             return new UriBuilder("https", GITHUB_ADDRESS)
             {
-                Path = path
+                Path = path,
+                Query = query
             };
         }
     }

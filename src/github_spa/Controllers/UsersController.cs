@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 
 namespace github_spa.Controllers
 {
-    public class UsersController : BaseController
+    public class UsersController : GithubController
     {
         [HttpGet]
         public async Task<JArray> GetUsers()
